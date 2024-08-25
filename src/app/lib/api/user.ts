@@ -1,11 +1,12 @@
-import { User } from '../../types';
 import apiClient from './client';
+import { User } from '../../types';
 
-export const fetchUser = async () => {
+export const fetchUser = async (): Promise<User | null> => {
   try {
-    const user: User = await apiClient.post('/users');
-    return user;
-  } catch {
-    console.error('ユーザー取得時にエラーが発生しました');
+    const res = await apiClient.get('/current_user');
+    return res.data.user;
+  } catch (error) {
+    console.error('ユーザー取得時にエラーが発生しました', error);
+    return null;
   }
 };
