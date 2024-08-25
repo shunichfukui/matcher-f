@@ -5,10 +5,10 @@ import Link from 'next/link';
 const Admin = () => {
   return (
     <>
-      <h1>admin画面</h1>
-      <Link href={'/admin/login'}>ログイン</Link>
+      <h1>認証</h1>
+      <Link href={'/auth/login'}>ログイン</Link>
       <br />
-      <Link href={'/admin/signUp'}>サインアップ</Link>
+      <Link href={'/auth/register'}>登録</Link>
     </>
   );
 };

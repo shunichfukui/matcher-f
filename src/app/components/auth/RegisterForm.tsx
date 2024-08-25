@@ -2,24 +2,24 @@
 
 import { useRouter } from 'next/navigation';
 import AuthForm from './AuthForm';
-import { register } from 'module';
+import { register } from '../../lib/api/auth';
 
-export default function SignUpForm() {
+export default function RegisterForm() {
   const router = useRouter();
 
-  const handleSignUp = async (email: string, password: string) => {
+  const handleRegister = async (email: string, password: string) => {
     try {
       await register(email, password);
       router.push('/');
     } catch {
-      alert('Sign up failed');
+      alert('アカウント登録に失敗しました');
     }
   };
 
   return (
     <AuthForm
-      onSubmit={handleSignUp}
-      buttonText="Sign Up"
+      onSubmit={handleRegister}
+      buttonText="登録"
       showPasswordConfirmation
     />
   );
