@@ -29,7 +29,7 @@ export default function Home() {
       <div className={styles.description}>
         {user ? (
           <>
-            <h1>ようこそ、{user.email}さん！</h1>
+            <h1 className={styles.title}>ようこそ、{user?.nickname}さん！</h1>
           </>
         ) : (
           <p>読み込み中...</p>

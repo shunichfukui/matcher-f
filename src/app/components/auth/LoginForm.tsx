@@ -7,9 +7,13 @@ import { login } from '../../lib/api/auth';
 export default function LoginForm() {
   const router = useRouter();
 
-  const handleLogin = async (email: string, password: string) => {
+  const handleLogin = async (
+    email: string,
+    password: string,
+    nickname: string
+  ) => {
     try {
-      await login(email, password);
+      await login(email, password, nickname);
       router.push('/');
     } catch {
       alert('Login failed');

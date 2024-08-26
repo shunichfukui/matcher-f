@@ -1,8 +1,12 @@
 import apiClient from './client';
 
-export async function login(email: string, password: string) {
+export async function login(email: string, password: string, nickname: string) {
   try {
-    const res = await apiClient.post('/login', { email, password });
+    const res = await apiClient.post('/login', {
+      email,
+      password,
+      nickname,
+    });
     const data = res.data;
     localStorage.setItem('token', data.token);
     return data;
@@ -15,9 +19,17 @@ export async function login(email: string, password: string) {
   }
 }
 
-export async function register(email: string, password: string) {
+export async function register(
+  email: string,
+  password: string,
+  nickname: string
+) {
   try {
-    const res = await apiClient.post('/register', { email, password });
+    const res = await apiClient.post('/register', {
+      email,
+      password,
+      nickname,
+    });
     const data = res.data;
     localStorage.setItem('token', data.token);
     return data;
