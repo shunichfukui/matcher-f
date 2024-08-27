@@ -1,8 +1,8 @@
-import React, { Suspense } from 'react';
+import React from 'react';
 
 import Link from 'next/link';
 
-const Admin = () => {
+const AuthPage = () => {
   return (
     <>
       <h1>認証</h1>
@@ -13,4 +13,4 @@ const Admin = () => {
   );
 };
 
-export default Admin;
+export default AuthPage;
